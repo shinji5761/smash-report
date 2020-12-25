@@ -1,0 +1,36 @@
+<div class="signin-card">
+    <p-card header="SmashReport">
+        <div class="p-fluid p-formgrid p-grid form">
+            <div class="p-col-12 p-md-4">
+                <label style="width : 100px">メールアドレス</label>
+                <div class="p-inputgroup">
+                    <input type="email" pInputText #email>         
+                </div>
+            </div>
+            <div class="p-col-12 p-md-4">
+                <label style="width : 100px">パスワード</label>
+                <div class="p-inputgroup">
+                    <input type="password" pPassword #password>         
+                </div>
+            </div>
+        </div>
+        <div class="forget-password">
+            <button pButton class="p-button-link" label="パスワードを忘れた場合"></button>
+        </div>
+
+        <p-footer>
+            <button pButton class="p-button p-button-link" label="Sign In" (click)="onClickSignInBtn(email.value, password.value  )"></button>
+            <button pButton class="p-button p-button-link" label="Sign Up" (click)="onClickSignUpBtn( )"></button>
+        </p-footer>
+    </p-card>
+</div>
+    <!-- Twitter Login -->
+    <div class="p-grid">
+        <div class="p-col-12 google-btn">
+            <button pButton icon="pi pi-google" iconPos="left" class="p-button-outlined p-button-secondary" label="Google" (click)="onClickSigninGoogleBtn( )"></button>
+        </div>
+        <div class="p-col-12 twitter-btn">
+            <button pButton icon="pi pi-twitter" iconPos="left" class="p-button-outlined p-button-primary" label="Twitter" (click)="onClickSigninTwitterBtn( )"></button>
+        </div>
+    </div>
+

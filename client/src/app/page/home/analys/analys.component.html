@@ -1,0 +1,22 @@
+<div class="select-char-box">
+    <app-select-char [initValue]="usedCharId" header="使用キャラ" (selectEvent)="onSelectUseChar( $event )"></app-select-char>
+</div>
+
+<div class="report-view">
+    <p-dataView [value]="reports">
+        <ng-template let-report pTemplate="listItem">
+            <div class="p-col-6" style="padding-left : 15px">
+                {{ CommonUtil.getCharName( report.compCharId ) }}
+            </div>
+            <div class="p-col-2">
+                {{ report.win }}勝
+            </div>
+            <div class="p-col-2">
+                {{ report.lose }}負
+            </div>
+            <div class="p-col-2">
+                {{ report.rate * 100 }}%
+            </div>
+        </ng-template>
+    </p-dataView>
+</div>

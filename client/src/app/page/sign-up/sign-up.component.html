@@ -1,0 +1,32 @@
+<div class="signup-card">
+    <p-card>
+        <p-header>
+            SmashReport
+        </p-header>
+        <div class="p-fluid p-formgrid p-grid form">
+            <div class="p-col-12 p-md-4">
+                <label style="width : 100px">メールアドレス</label>
+                <div class="p-inputgroup">
+                    <input type="email" pInputText #email>         
+                </div>
+            </div>
+            <div class="p-col-12 p-md-4">
+                <label style="width : 100px">パスワード</label>
+                <div class="p-inputgroup">
+                    <input type="password" pPassword #password>         
+                </div>
+            </div>
+            <div class="p-col-12 p-md-4">
+                <label style="width : 100px">パスワード(確認)</label>
+                <div class="p-inputgroup">
+                    <input type="password" pPassword #password_>         
+                </div>
+            </div>
+        </div>
+        <p-footer>
+            <button pButton class="p-button p-button-link" label="Sign Up" (click)="onClickSignUpBtn( email.value, password.value, password_.value )" ></button>
+            <button pButton class="p-button p-button-link" label="Back" (click)="onClickBackBtn( )" ></button>
+        </p-footer>
+    </p-card>
+
+</div>

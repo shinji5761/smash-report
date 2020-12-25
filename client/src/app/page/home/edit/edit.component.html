@@ -1,0 +1,25 @@
+<div style="margin: 10px;">
+    <div class="p-grid">
+        <div class="p-col-12 p-md-6">
+            <app-select-char [initValue]="report.usedCharId" header="使用キャラ" (selectEvent)="onSelectUseChar( $event )"></app-select-char>
+        </div>
+        <div class="p-col-12 p-md-6">
+            <app-select-char [initValue]="report.compCharId" header="相手キャラ" (selectEvent)="onSelectCompChar( $event )"></app-select-char>
+        </div>
+        <div class="p-col-12 p-md-6">
+            <app-select-stage [initValue]="report.stageId" header="ステージ" (selectEvent)="onSelectCompChar( $event )"></app-select-stage>
+        </div>
+        <div class="p-col-12 p-md-6">
+            <app-select-button-result [initValue]="report.result" (selectedResult)="onSelectResult( $event )"></app-select-button-result>
+        </div>
+        <div class="p-col-12 p-md-6">
+            <app-select-button-env [initValue]="report.env" (selectedEnv)="onSelectEnv( $event )"></app-select-button-env>
+        </div>
+    </div>
+    
+    <!-- 保存ボタン -->
+    <button pButton icon="pi pi-save" class="p-button-raised p-button-rounded rounded-button" (click)="onClickSaveBtn( )"></button>    
+</div>
+
+
+<p-toast></p-toast>

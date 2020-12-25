@@ -1,0 +1,23 @@
+.signin-card {
+    margin : 20% 10% 5%;
+
+    div.form div {
+        margin-bottom : 10px;
+    }
+
+
+    .forget-password {
+        text-align: right;
+        button {
+            // padding : 0;
+            font-size : 12px;
+        }
+    }
+}
+
+div.twitter-btn, div.google-btn {
+    text-align: center;
+    button {
+        padding : 10px 30%;
+    }
+}

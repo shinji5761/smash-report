@@ -1,0 +1,6 @@
+<div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12">
+        <label style="width : 100px" >{{ header }}</label>
+        <p-dropdown class="select-char" [options]="options" [(ngModel)]="selected"  optionValue="id" optionLabel="name" (onChange)="onChangeChar( $event )"></p-dropdown>
+    </div>
+</div>

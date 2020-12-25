@@ -1,0 +1,14 @@
+<div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12">
+        <label style="width : 100px" >結果</label>
+        <p-selectButton
+            [options]="options"
+            [(ngModel)]="selected"
+            optionValue="id"
+            optionLabel="name"
+            (onChange)="onChangeResult( $event )"
+        ></p-selectButton>
+    </div>
+</div>
+
+

@@ -1,0 +1,21 @@
+[32m[Nest] 64   - [39m12/24/2020, 7:49:33 PM   [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +189ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +4ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[InstanceLoader] [39m[32mTypeOrmCoreModule dependencies initialized[39m[38;5;3m +569ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +4ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +2ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[InstanceLoader] [39m[32mUserModule dependencies initialized[39m[38;5;3m +3ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[InstanceLoader] [39m[32mReportModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[RoutesResolver] [39m[32mAppController {}:[39m[38;5;3m +7ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[RouterExplorer] [39m[32mMapped {, GET} route[39m[38;5;3m +4ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[RoutesResolver] [39m[32mUserController {/users}:[39m[38;5;3m +2ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[RouterExplorer] [39m[32mMapped {/users/find, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[RouterExplorer] [39m[32mMapped {/users, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[RouterExplorer] [39m[32mMapped {/users, PUT} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[RoutesResolver] [39m[32mReportController {/report}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[RouterExplorer] [39m[32mMapped {/report/list, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[RouterExplorer] [39m[32mMapped {/report/analys, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[RouterExplorer] [39m[32mMapped {/report, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[RouterExplorer] [39m[32mMapped {/report, PUT} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[RouterExplorer] [39m[32mMapped {/report/:id, DELETE} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 64   - [39m12/24/2020, 7:49:34 PM   [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +4ms[39m
