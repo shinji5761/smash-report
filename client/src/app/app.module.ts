@@ -66,7 +66,7 @@ import { MessageService } from 'primeng/api';
     AnalysComponent
 ],
   imports: [
-        BrowserModule
+        BrowserModule.withServerTransition({ appId: 'serverApp' })
       , BrowserAnimationsModule
       , CommonModule
       , FormsModule

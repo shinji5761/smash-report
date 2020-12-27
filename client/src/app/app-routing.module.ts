@@ -28,7 +28,9 @@ const route : Routes = [
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forRoot( route )
+    RouterModule.forRoot(route, {
+    initialNavigation: 'enabled'
+})
   ],
   exports : [ RouterModule ]
 })
