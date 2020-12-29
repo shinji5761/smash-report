@@ -47,6 +47,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { ToastModule } from 'primeng/toast';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { MessageService } from 'primeng/api';
+import { CounterplanComponent } from './page/home/counterplan/counterplan.component';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { MessageService } from 'primeng/api';
     SelectButtonEnvComponent,
     SelectStageComponent,
     SignUpComponent,
-    AnalysComponent
+    AnalysComponent,
+    CounterplanComponent
 ],
   imports: [
         BrowserModule.withServerTransition({ appId: 'serverApp' })

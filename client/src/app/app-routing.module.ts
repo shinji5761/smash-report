@@ -10,6 +10,7 @@ import { ListComponent } from './page/home/list/list.component';
 import { SignUpComponent } from './page/sign-up/sign-up.component';
 
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+import { CounterplanComponent } from './page/home/counterplan/counterplan.component';
 
 const route : Routes = [
     { 'path' : '', 'redirectTo' : 'sign-in', 'pathMatch' : 'full'  }
@@ -21,6 +22,7 @@ const route : Routes = [
     , { 'path' : 'list', 'component' : ListComponent, 'outlet' : 'content' }
     , { 'path' : 'edit', 'component' : EditComponent, 'outlet' : 'content' }
     , { 'path' : 'analys', 'component' : AnalysComponent, 'outlet' : 'content' }
+    , { 'path' : 'counterplan', 'component' : CounterplanComponent, 'outlet' : 'content' }
   ]}
 ];
 

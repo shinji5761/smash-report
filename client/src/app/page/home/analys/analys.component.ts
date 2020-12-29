@@ -47,7 +47,7 @@ export class AnalysComponent implements OnInit {
   }
 
   /** 使用キャラ 変更イベント */
-  onSelectUseChar( id : string ) : void {
+  onSelectUsedChar( id : string ) : void {
     this.usedCharId = id;
     this.getInfo( );
   }
