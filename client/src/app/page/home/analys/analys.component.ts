@@ -10,11 +10,22 @@ import { CommonUtilService } from 'src/app/service/common/common-util.service';
   styleUrls: ['./analys.component.scss']
 })
 export class AnalysComponent implements OnInit {
+
+  cols : any[ ] = [
+      { 'header' : '相手キャラ', 'field' : 'compCharId', 'get' : ( report : IReportAnalys )=>{ return this.CommonUtil.getCharName( report.compCharId ) }  }
+    , { 'header' : '勝',        'field' : 'win', 'get' :  ( report : IReportAnalys )=>{ return report.win; } }
+    , { 'header' : '負',        'field' : 'lose', 'get' : ( report : IReportAnalys )=>{ return report.lose; } }
+    , { 'header' : '勝率',      'field' : 'rate', 'get' : ( report : IReportAnalys )=>{ return report.rate * 100 + '%'; } }
+  ];
+
   /** レポート一覧 */
   reports : IReportAnalys[ ] = [ ];
 
   /** 使用キャラID */
   usedCharId : string = '0';
+
+  /** テーブル ローディング */
+  loading : boolean = false;
 
   constructor(
       private AuthSvc : AuthService
@@ -33,6 +44,7 @@ export class AnalysComponent implements OnInit {
 
   /** 情報取得 */
   getInfo( ) : void {
+    this.loading = true;
     let option : IReportAnarysOption = {
         'uId' : this.AuthSvc.getUid( )
       , 'usedCharId' : this.usedCharId
@@ -43,6 +55,9 @@ export class AnalysComponent implements OnInit {
     .then( ( result : IReportAnalys[] ) => {
       console.dir( result ); 
       this.reports = result;
+    })
+    .finally( () => {
+      this.loading = false;
     });
   }
 
@@ -52,6 +67,12 @@ export class AnalysComponent implements OnInit {
     this.getInfo( );
   }
 
-
+  /** 分析レポート 選択イベント */
+  onClickReportBtn( report : IReportAnalys ) : void {
+    // ステージごとの勝敗を取得
+    // モーダルを表示する｡
+    console.dir( '準備中' );
+    console.dir( report );
+  }
 
 }
