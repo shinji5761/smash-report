@@ -32,6 +32,7 @@ export class CounterplanComponent implements OnInit {
 
   /** 使用キャラ 変更イベント */
   onSelectChar( id : string ) : void {
+    this.plan.charId = id;
     let option : ICounterplanDto = {
       'uId' : this.AuthSvc.getUid()
       , 'charId' : id
