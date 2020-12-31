@@ -14,8 +14,8 @@ export class SelectButtonResultComponent implements OnInit {
   @Output( )
   selectedResult : EventEmitter<string> = new EventEmitter( );
 
-  options : any = this.CommonUtil.RESULT;
-  
+  options : any = JSON.parse(JSON.stringify(this.CommonUtil.RESULT));
+
   selected : string;
 
   constructor(

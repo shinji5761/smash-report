@@ -16,8 +16,8 @@ export class SelectStageComponent implements OnInit {
   @Output( )
   selectEvent : EventEmitter<string> = new EventEmitter( );
 
-  options : any = this.CommonUtil.STAGE;
-  
+  options : any = JSON.parse(JSON.stringify(this.CommonUtil.STAGE));
+
   selected : string;
 
   constructor(

@@ -16,7 +16,7 @@ export class SelectCharComponent implements OnInit {
   @Output( )
   selectEvent : EventEmitter<string> = new EventEmitter( );
 
-  options : any = this.CommonUtil.CHAR;
+  options : any = JSON.parse(JSON.stringify(this.CommonUtil.CHAR));
   
   selected : string;
 

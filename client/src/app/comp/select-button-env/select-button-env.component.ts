@@ -13,8 +13,8 @@ export class SelectButtonEnvComponent implements OnInit {
   @Output( )
   selectedEnv : EventEmitter<string> = new EventEmitter( );
 
-  options : any = this.CommonUtil.ENV;
-  
+  options : any = JSON.parse(JSON.stringify(this.CommonUtil.ENV));
+
   selected : string;
 
   constructor(
