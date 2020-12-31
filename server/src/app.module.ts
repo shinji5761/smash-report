@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '@nestjs/config';
 
 // Users API
 import { Users } from './users/users';
@@ -10,7 +11,8 @@ import { UserModule } from './users/users.module';
 // Report API
 import { Report, SummaryReport } from './report/report';
 import { ReportModule } from './report/report.module';
-import { ConfigModule } from '@nestjs/config';
+import { CounterplanModule } from './counterplan/counterplan.module';
+import { Counterplan } from './counterplan/counterplan';
 
 
 @Module({
@@ -31,11 +33,12 @@ import { ConfigModule } from '@nestjs/config';
       // username: 'smash_report',
       // password: 'Infinite33',
       // database: 'smash_report',
-      entities: [ Users, Report, SummaryReport ],
+      entities: [ Users, Report, SummaryReport, Counterplan ],
       synchronize: true,
     }),
     UserModule,
-    ReportModule
+    ReportModule,
+    CounterplanModule
   ],
   controllers: [ AppController ],
   providers: [ AppService ],

@@ -38,6 +38,7 @@ import { CardModule } from 'primeng/card';
 import { DataViewModule } from 'primeng/dataview';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
+import { EditorModule } from 'primeng/editor';
 import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
 import { PasswordModule } from 'primeng/password'
@@ -83,6 +84,7 @@ import { CounterplanComponent } from './page/home/counterplan/counterplan.compon
       , DataViewModule
       , DialogModule
       , DropdownModule
+      , EditorModule
       , InputTextModule
       , MessageModule
       , PasswordModule

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CounterplanApiService } from './counterplan-api/counterplan-api.service';
 import { ReportApiService } from './report-api/report-api.service';
 import { UserApiService } from './user-api/user-api.service';
 
@@ -19,6 +20,10 @@ export class ApiFactoryService {
 
   getReportApi( ) {
     return new ReportApiService( this.http );
+  }
+
+  getCounterplanApi( ) {
+    return new CounterplanApiService( this.http );
   }
 
 }
