@@ -7,7 +7,7 @@
             <app-select-char [initValue]="report.compCharId" header="相手キャラ" (selectEvent)="onSelectCompChar( $event )"></app-select-char>
         </div>
         <div class="p-col-12 p-md-6">
-            <app-select-stage [initValue]="report.stageId" header="ステージ" (selectEvent)="onSelectCompChar( $event )"></app-select-stage>
+            <app-select-stage [initValue]="report.stageId" header="ステージ" (selectEvent)="onSelectStage( $event )"></app-select-stage>
         </div>
         <div class="p-col-12 p-md-6">
             <app-select-button-result [initValue]="report.result" (selectedResult)="onSelectResult( $event )"></app-select-button-result>
@@ -24,4 +24,4 @@
 </div>
 
 
-<p-toast></p-toast>
+<p-toast position="top-left"></p-toast>
