@@ -21,3 +21,9 @@ export interface FindSummaryReport {
     uId : string;
     usedCharId : string;
 }
+
+export interface FindDetailReport {
+    uId : string;
+    usedCharId : string;
+    compCharId : string;
+}

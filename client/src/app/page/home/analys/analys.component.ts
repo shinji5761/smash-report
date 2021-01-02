@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IReportAnalys, IReportAnarysOption } from 'src/app/entity/i-report';
+import { IReportAnalys, IReportAnarysOption, IReportDetail, IReportDetailOption } from 'src/app/entity/i-report';
 import { ApiFactoryService } from 'src/app/service/api/api-factory.service';
 import { AuthService } from 'src/app/service/auth/auth.service';
 import { CommonUtilService } from 'src/app/service/common/common-util.service';
@@ -67,12 +67,44 @@ export class AnalysComponent implements OnInit {
     this.getInfo( );
   }
 
+  // 詳細
+  detailDisp : boolean = false;
+  chartData : any = [];
+  
+  
   /** 分析レポート 選択イベント */
   onClickReportBtn( report : IReportAnalys ) : void {
-    // ステージごとの勝敗を取得
-    // モーダルを表示する｡
-    console.dir( '準備中' );
-    console.dir( report );
+
+    let option : IReportDetailOption = {
+        'uId' : this.AuthSvc.getUid( )
+      , 'usedCharId' : report.usedCharId
+      , 'compCharId' : report.compCharId
+    };
+    
+    this.AF.getReportApi().findByUsedCharDetail( option )
+    .then(( resultList : IReportDetail[ ] ) => {
+      this.detailDisp = true;
+      for( let result of resultList ) {
+        this.chartData.push(
+          {
+            'options' : { 'title' : { 'display' : true, 'text' : this.CommonUtil.STAGE[ result.stageId ].name + ' ' + result.rate + '%', 'fontSize' : 14 }, 'legend' : { 'position' : 'right' } },
+            'data' : {
+              'labels' : ['勝', '負'],
+              'datasets' : [
+                {
+                    'data' : [result.win, result.lose]
+                  , 'backgroundColor' : [ "#FF6384", "#36A2EB" ]
+                  , 'hoverBackgroundColor' : [ "#FF6384", "#36A2EB" ]
+                }
+              ]
+            }
+          }
+        );
+      }
+    });
   }
 
+  onHideDialog( ) : void {
+    this.chartData = [];  
+  }
 }

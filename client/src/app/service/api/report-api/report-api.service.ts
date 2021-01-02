@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IReport, IReportAnalys, IReportAnarysOption, IReportFindAllOption } from 'src/app/entity/i-report';
+import { IReport, IReportAnalys, IReportAnarysOption, IReportDetailOption, IReportFindAllOption } from 'src/app/entity/i-report';
 import { environment } from 'src/environments/environment';
 
 
@@ -19,8 +19,12 @@ export class ReportApiService {
     return this.http.post<IReportAnalys[ ]>( this.url + '/analys', option ).toPromise( );
   }
 
+  async findByUsedCharDetail( option : IReportDetailOption ) {
+    return this.http.post<IReportDetailOption[ ]>( this.url + '/detail', option ).toPromise( );
+  }
+
   async findAll( option : IReportFindAllOption ) {
-    return this.http.post<IReport[]>( this.url + '/list', option ).toPromise( );
+    return this.http.post<IReport[ ]>( this.url + '/list', option ).toPromise( );
   }
 
   async create( data : IReport ) {

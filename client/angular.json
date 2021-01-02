@@ -39,6 +39,7 @@
             ],
             "scripts": [
               "node_modules/quill/dist/quill.js"
+              , "node_modules/chart.js/dist/Chart.js"
             ]
           },
           "configurations": {
@@ -110,6 +111,7 @@
             ],
             "scripts": [
               "node_modules/quill/dist/quill.js"
+              , "node_modules/chart.js/dist/Chart.js"
             ]
           }
         },

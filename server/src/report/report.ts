@@ -89,3 +89,43 @@ export class SummaryReport {
     @ViewColumn({ 'name' : 'rate' })
     rate : number;
 }
+
+@ViewEntity({
+    'expression' : `
+    SELECT *, round(v.win::numeric / ( v.win::numeric + v.lose::numeric), 2 ) * 100 AS rate FROM
+    (
+        SELECT
+            u_id
+            , used_char_id
+            , comp_char_id
+            , stage_id
+            , COUNT( CASE WHEN result = '0' THEN TRUE ELSE NULL END ) AS "win"
+            , COUNT( CASE WHEN result = '1' THEN TRUE ELSE NULL END ) AS "lose"
+        FROM report
+        GROUP BY u_id, used_char_id, comp_char_id, stage_id
+        ORDER BY u_id, used_char_id, comp_char_id, stage_id
+    ) v
+    `
+})
+export class DetailReport {
+    @ViewColumn({ 'name' : 'u_id' })
+    uId : string;
+
+    @ViewColumn({ 'name' : 'used_char_id' })
+    usedCharId : string;
+
+    @ViewColumn({ 'name' : 'comp_char_id' })
+    compCharId : string;
+
+    @ViewColumn({ 'name' : 'stage_id' })
+    stageId : string;
+
+    @ViewColumn({ 'name' : 'win' })
+    win : number;
+
+    @ViewColumn({ 'name' : 'lose' })
+    lose : number;
+
+    @ViewColumn({ 'name' : 'rate' })
+    rate : number;
+}

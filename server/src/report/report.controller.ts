@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Param, Post, Put } from '@nestjs/common';
 import { Report } from './report';
-import { FindAllReport, FindAllReportDto, FindSummaryReport } from './report-dto';
+import { FindAllReport, FindAllReportDto, FindDetailReport, FindSummaryReport } from './report-dto';
 import { ReportService } from './report.service';
 
 @Controller('report')
@@ -36,8 +36,19 @@ export class ReportController {
             throw e;
         }
         return result;
-
     }
+
+    @Post('detail')
+    async findByUsedCharDetail( @Body() body : FindDetailReport ) {
+        let result : any
+        try {
+            result = await this.svc.findByUsedCharDetail( body );
+        } catch( e ) {
+            throw e;
+        }
+        return result;
+    }
+
 
     @Post()
     async create(@Body() dto : Partial<Report> ) {

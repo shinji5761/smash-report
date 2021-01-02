@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, getManager } from 'typeorm';
-import { Report, SummaryReport } from './report';
-import { FindAllReport, FindSummaryReport } from './report-dto';
+import { DetailReport, Report, SummaryReport } from './report';
+import { FindAllReport, FindDetailReport, FindSummaryReport } from './report-dto';
 
 @Injectable()
 export class ReportService {
@@ -20,6 +20,14 @@ export class ReportService {
     async findByUsedCharSummary( param : FindSummaryReport ) {
         const entryManager = getManager();
         let result = await entryManager.find( SummaryReport , { 'where' : param } );
+
+        return result;
+    }
+
+    /** 検索 詳細 */
+    async findByUsedCharDetail( param : FindDetailReport ) {
+        const entryManager = getManager();
+        let result = await entryManager.find( DetailReport , { 'where' : param } );
 
         return result;
     }

@@ -35,6 +35,7 @@ import { AuthService } from './service/auth/auth.service';
 // PrimeFace
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { ChartModule } from 'primeng/chart';
 import { DataViewModule } from 'primeng/dataview';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
@@ -81,6 +82,7 @@ import { CounterplanComponent } from './page/home/counterplan/counterplan.compon
       , AppRoutingModule
       , ButtonModule
       , CardModule
+      , ChartModule
       , DataViewModule
       , DialogModule
       , DropdownModule
