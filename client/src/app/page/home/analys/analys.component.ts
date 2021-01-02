@@ -70,11 +70,11 @@ export class AnalysComponent implements OnInit {
   // 詳細
   detailDisp : boolean = false;
   chartData : any = [];
-  
+  selectedReport : IReportAnalys;
   
   /** 分析レポート 選択イベント */
   onClickReportBtn( report : IReportAnalys ) : void {
-
+    this.selectedReport = report;
     let option : IReportDetailOption = {
         'uId' : this.AuthSvc.getUid( )
       , 'usedCharId' : report.usedCharId
