@@ -4,21 +4,20 @@ import { AppModule } from './app.module';
 
 import fs = require( 'fs' );
 
-const httpsOptions = {
-  key: fs.readFileSync('/etc/letsencrypt/live/smash-report.com/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/smash-report.com/cert.pem'),
-};
+// const httpsOptions = {
+//   key: fs.readFileSync('/etc/letsencrypt/live/smash-report.com/privkey.pem'),
+//   cert: fs.readFileSync('/etc/letsencrypt/live/smash-report.com/cert.pem'),
+// };
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
-    logger : [ 'error', 'warn' , 'debug', 'log' ],
-    httpsOptions
+    logger : [ 'error', 'warn' , 'debug', 'log' ]
   });
-  const configService = app.get(ConfigService);
   app.enableCors({
     origin: "*",
     allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept'
   });
-  await app.listen(configService.get( 'PORT' ) || 3000 );
+
+  await app.listen( 3000 );
 }
 bootstrap();

@@ -3,7 +3,7 @@ export const environment = {
 
     // api
   , api : {
-    host : 'https://smash-report.com:3000'
+    host : 'https://api.smash-report.com:3000'
   }
 
   , firebaseConfig : {
