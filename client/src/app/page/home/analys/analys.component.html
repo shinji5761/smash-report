@@ -24,7 +24,7 @@
 
 <p-dialog [(visible)]="detailDisp" *ngIf="chartData.length > 0" (onHide)="onHideDialog( )" [header]="'VS ' + CommonUtil.CHAR[selectedReport.compCharId].name">
     <div class="p-grid">
-        <div class="p-col-12 p-md-6" *ngFor="let chart of chartData">
+        <div class="p-col-12 p-md-6 analys-chart" *ngFor="let chart of chartData">
             <p-chart type="pie" [data]="chart.data" [options]="chart.options"></p-chart>
         </div>
     </div>
