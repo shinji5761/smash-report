@@ -6,3 +6,4 @@
 /docker/db/
 /client/package-lock.json
 /server/package-lock.json
+/score/
