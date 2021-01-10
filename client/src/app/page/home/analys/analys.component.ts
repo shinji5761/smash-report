@@ -74,6 +74,7 @@ export class AnalysComponent implements OnInit {
   
   /** 分析レポート 選択イベント */
   onClickReportBtn( report : IReportAnalys ) : void {
+    this.chartData = [];
     this.selectedReport = report;
     let option : IReportDetailOption = {
         'uId' : this.AuthSvc.getUid( )
