@@ -1,10 +1,10 @@
 <div style="margin: 10px;">
     <div class="p-grid">
         <div class="p-col-12 p-md-6">
-            <app-select-char [initValue]="report.usedCharId" header="使用キャラ" (selectEvent)="onSelectUseChar( $event )"></app-select-char>
+            <app-select-char [initValue]="report.usedCharId" header="自分" (selectEvent)="onSelectUseChar( $event )"></app-select-char>
         </div>
         <div class="p-col-12 p-md-6">
-            <app-select-char [initValue]="report.compCharId" header="相手キャラ" (selectEvent)="onSelectCompChar( $event )"></app-select-char>
+            <app-select-char [initValue]="report.compCharId" header="相手" (selectEvent)="onSelectCompChar( $event )"></app-select-char>
         </div>
         <div class="p-col-12 p-md-6">
             <app-select-stage [initValue]="report.stageId" header="ステージ" (selectEvent)="onSelectStage( $event )"></app-select-stage>

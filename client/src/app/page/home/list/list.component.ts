@@ -13,8 +13,8 @@ import { CommonUtilService } from 'src/app/service/common/common-util.service';
 export class ListComponent implements OnInit {
 
   cols : any[ ] = [
-      { 'header' : '使用キャラ', 'field' : 'usedCharId', 'get' : ( id : string )=>{ return this.CommonUtil.getCharName( id ) } }
-    , { 'header' : '相手キャラ', 'field' : 'compCharId', 'get' : ( id : string )=>{ return this.CommonUtil.getCharName( id ) }  }
+      { 'header' : '自分', 'field' : 'usedCharId', 'get' : ( id : string )=>{ return this.CommonUtil.getCharName( id ) } }
+    , { 'header' : '相手', 'field' : 'compCharId', 'get' : ( id : string )=>{ return this.CommonUtil.getCharName( id ) }  }
     // , { 'header' : 'ステージ',   'field' : 'stageId', 'get' : ( id : string )=>{ return this.CommonUtil.getStageName( id ) }  }
     , { 'header' : '結果',      'field' : 'result', 'get' : ( id : string )=>{ return this.CommonUtil.getResultName( id ) }  }
     , { 'header' : '環境',      'field' : 'env', 'get' : ( id : string )=>{ return this.CommonUtil.getEnvName( id ) }  }
@@ -95,12 +95,12 @@ export class ListComponent implements OnInit {
     this.editDisp = true;
   }
 
-  /** 使用キャラ 変更イベント */
+  /** 自分 変更イベント */
   onSelectUsedChar( char : string ) : void {
     this.editReport.usedCharId = char;
   }
 
-  /** 相手キャラ 変更イベント */
+  /** 相手 変更イベント */
   onSelectCompChar( char : string ) : void {
     this.editReport.compCharId = char;
   }

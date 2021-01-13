@@ -16,7 +16,7 @@ export class ReportService {
 
     }
 
-    /** 検索 使用キャラ */
+    /** 検索 自分 */
     async findByUsedCharSummary( param : FindSummaryReport ) {
         const entryManager = getManager();
         let result = await entryManager.find( SummaryReport , { 'where' : param } );
