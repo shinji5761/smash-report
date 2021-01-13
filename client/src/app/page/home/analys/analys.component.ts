@@ -12,7 +12,7 @@ import { CommonUtilService } from 'src/app/service/common/common-util.service';
 export class AnalysComponent implements OnInit {
 
   cols : any[ ] = [
-      { 'header' : '相手キャラ', 'field' : 'compCharId', 'get' : ( report : IReportAnalys )=>{ return this.CommonUtil.getCharName( report.compCharId ) }  }
+      { 'header' : '相手', 'field' : 'compCharId', 'get' : ( report : IReportAnalys )=>{ return this.CommonUtil.getCharName( report.compCharId ) }  }
     , { 'header' : '勝',        'field' : 'win', 'get' :  ( report : IReportAnalys )=>{ return report.win; } }
     , { 'header' : '負',        'field' : 'lose', 'get' : ( report : IReportAnalys )=>{ return report.lose; } }
     , { 'header' : '勝率',      'field' : 'rate', 'get' : ( report : IReportAnalys )=>{ return report.rate * 100 + '%'; } }
@@ -21,7 +21,7 @@ export class AnalysComponent implements OnInit {
   /** レポート一覧 */
   reports : IReportAnalys[ ] = [ ];
 
-  /** 使用キャラID */
+  /** 自分ID */
   usedCharId : string = '0';
 
   /** テーブル ローディング */
@@ -61,7 +61,7 @@ export class AnalysComponent implements OnInit {
     });
   }
 
-  /** 使用キャラ 変更イベント */
+  /** 自分 変更イベント */
   onSelectUsedChar( id : string ) : void {
     this.usedCharId = id;
     this.getInfo( );

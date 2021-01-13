@@ -26,6 +26,7 @@ export class SelectStageComponent implements OnInit {
   }
 
   ngOnInit( ): void {
+    this.selected = this.initValue;
   }
 
   onChange( event ) : void {
