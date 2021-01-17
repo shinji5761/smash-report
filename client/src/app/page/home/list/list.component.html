@@ -1,6 +1,7 @@
+<!-- テーブル -->
 <p-table
     selectionMode="single" 
-    scrollHeight="calc( 100vh - 200px - 50px )"
+    scrollHeight="calc( 100vh - 160px - 50px - 50px )"
     [value]="reportList"
     [lazy]="true" 
     [scrollable]="true"
@@ -17,26 +18,37 @@
     </ng-template>
     <ng-template pTemplate="body" let-report >
         <tr [pSelectableRow]="report">
-            <td *ngFor="let col of cols" >{{ col.get( report[ col.field ] ) }}</td>
+            <!-- 自分 -->
+            <td><img src="assets/img/char/{{ report.usedCharId }}.png" alt=""></td>
+            <!-- 相手 -->
+            <td><img src="assets/img/char/{{ report.compCharId }}.png" alt=""></td>
+            <td>{{ cols[2].get( report[ cols[2].field ] ) }}</td>
+            <td>{{ cols[3].get( report[ cols[3].field ] ) }}</td>
         </tr>
     </ng-template>
 </p-table>
 
 
+<!-- 編集モーダル -->
 <p-dialog [(visible)]="editDisp" *ngIf="editReport" (onHide)="onHideEditDialog()">
     <div class="p-grid">
+        <!-- 自分 -->
         <div class="p-col-12 p-md-6">
             <app-select-char [initValue]="editReport.usedCharId" header="自分" (selectEvent)="onSelectUsedChar( $event )"></app-select-char>
         </div>
+        <!-- 相手 -->
         <div class="p-col-12 p-md-6">
             <app-select-char [initValue]="editReport.compCharId" header="相手" (selectEvent)="onSelectCompChar( $event )"></app-select-char>
         </div>
+        <!-- ステージ -->
         <div class="p-col-12 p-md-6">
             <app-select-stage [initValue]="editReport.stageId" header="ステージ" (selectEvent)="onSelectStage( $event )"></app-select-stage>
         </div>
+        <!-- 結果 -->
         <div class="p-col-12 p-md-6">
             <app-select-button-result [initValue]="editReport.result" (selectedResult)="onSelectResult( $event )"></app-select-button-result>
         </div>
+        <!-- 環境 -->
         <div class="p-col-12 p-md-6">
             <app-select-button-env [initValue]="editReport.env" (selectedEnv)="onSelectEnv( $event )"></app-select-button-env>
         </div>

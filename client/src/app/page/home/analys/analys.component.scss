@@ -15,3 +15,15 @@
 .analys-chart {
     min-width : 250px;
 }
+
+tr th {
+    text-align : center;
+}
+
+tr td {
+    text-align : center;
+    img {
+        width : 40px;
+        height : 40px;
+    }
+}
