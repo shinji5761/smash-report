@@ -16,7 +16,11 @@
     </ng-template>
     <ng-template pTemplate="body" let-report >
         <tr [pSelectableRow]="report">
-            <td *ngFor="let col of cols" >{{ col.get( report ) }}</td>
+            <!-- 相手 -->
+            <td><img src="assets/img/char/{{ report.compCharId }}.png" alt=""></td>
+            <td>{{ cols[1].get( report ) }}</td>
+            <td>{{ cols[2].get( report ) }}</td>
+            <td>{{ cols[3].get( report ) }}</td>
         </tr>
     </ng-template>
 </p-table>
