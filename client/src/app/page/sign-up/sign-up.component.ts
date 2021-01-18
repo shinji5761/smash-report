@@ -31,7 +31,7 @@ export class SignUpComponent implements OnInit {
     
     this.auth.createUserWithEmailAndPassword( email, password )
     .then( ( user ) => {
-      this.router.navigate( [ 'home', { 'outlets' : { 'content':'list' } } ] );
+      this.router.navigate( [ 'list' ] );
     })
     .catch( e => {
       console.error( e );

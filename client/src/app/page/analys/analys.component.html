@@ -1,10 +1,13 @@
+<!-- ヘッダー -->
+<app-header></app-header>
+
 <div class="select-char-box">
     <app-select-char [initValue]="usedCharId" header="自分" (selectEvent)="onSelectUsedChar( $event )"></app-select-char>
 </div>
 
 <p-table
     selectionMode="single" 
-    scrollHeight="calc( 100vh - 280px - 50px )"
+    scrollHeight="calc( 100vh - 280px - 50px  - 80px )"
     [value]="reports"
     [scrollable]="true"
     [loading]="loading"
