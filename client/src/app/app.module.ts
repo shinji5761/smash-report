@@ -50,6 +50,7 @@ import { ToastModule } from 'primeng/toast';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { MessageService } from 'primeng/api';
 import { CounterplanComponent } from './page/home/counterplan/counterplan.component';
+import { AdsenseModule } from 'ng2-adsense';
 
 
 @NgModule({
@@ -78,6 +79,13 @@ import { CounterplanComponent } from './page/home/counterplan/counterplan.compon
       // Firebase //
       , AngularFireModule.initializeApp( environment.firebaseConfig )
       , AngularFireAuthModule
+      // Adsense // 
+      , AdsenseModule.forRoot({
+        adClient: 'ca-pub-2018656716460271',
+        adSlot: 4303129368,
+        adtest : 'on',
+        fullWidthResponsive : true
+      })
       // PrimeNG //
       , AppRoutingModule
       , ButtonModule
