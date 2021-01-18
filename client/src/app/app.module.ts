@@ -13,12 +13,16 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+// Adsense
+import { AdsenseModule } from 'ng2-adsense';
+
+
 // Page
-import { AnalysComponent } from './page/home/analys/analys.component';
-import { EditComponent } from './page/home/edit/edit.component';
+import { AnalysComponent } from './page/analys/analys.component';
+import { CounterplanComponent } from './page/counterplan/counterplan.component';
+import { EditComponent } from './page/edit/edit.component';
 import { ForgetPasswordComponent } from './page/forget-password/forget-password.component';
-import { HomeComponent } from './page/home/home.component';
-import { ListComponent } from './page/home/list/list.component';
+import { ListComponent } from './page/list/list.component';
 import { SignInComponent } from './page/sign-in/sign-in.component';
 import { SignUpComponent } from './page/sign-up/sign-up.component';
 
@@ -49,8 +53,6 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { ToastModule } from 'primeng/toast';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { MessageService } from 'primeng/api';
-import { CounterplanComponent } from './page/home/counterplan/counterplan.component';
-import { AdsenseModule } from 'ng2-adsense';
 
 
 @NgModule({
@@ -61,7 +63,6 @@ import { AdsenseModule } from 'ng2-adsense';
     ListComponent,
     HeaderComponent,
     EditComponent,
-    HomeComponent,
     SelectCharComponent,
     SelectButtonResultComponent,
     SelectButtonEnvComponent,

@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
 
   /** リンクボタン クリックイベント */
   onClickLinkBtn( url : string ) : void {
-    this.router.navigate( [ 'home', { 'outlets' : { 'content' : url } } ] );
+    this.router.navigate( [ url ] );
     this.sidebarDisp = false;
   }
 
