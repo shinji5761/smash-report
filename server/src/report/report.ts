@@ -24,11 +24,11 @@ export class Report {
     env : string;
 
     /** 新規登録日時 */
-    @CreateDateColumn({ name: 'created_at', type: 'timestamp', precision: 0 })
+    @CreateDateColumn({ name: 'created_at', type: 'timestamp' })
     readonly created_at: Date;
     
     /** 最終更新日時 */
-    @UpdateDateColumn({ name: 'updated_at', type: 'timestamp', precision: 0 })
+    @UpdateDateColumn({ name: 'updated_at', type: 'timestamp' })
     readonly updated_at: Date;
 }
 
@@ -155,7 +155,7 @@ export class DetailReport {
             -- 勝
             SELECT
             u_id
-            , TO_CHAR( created_at, 'YYYY/MM/DD') AS date
+            , TO_CHAR( created_at + '9:00', 'YYYY/MM/DD') AS date
             , COUNT( result ) AS win
             FROM report
             WHERE result = '0'
@@ -167,7 +167,7 @@ export class DetailReport {
             -- 負
             SELECT
             u_id
-            , TO_CHAR( created_at, 'YYYY/MM/DD') AS date
+            , TO_CHAR( created_at + '9:00', 'YYYY/MM/DD') AS date
             , COUNT( result ) AS lose
             FROM report
             WHERE result = '1'
