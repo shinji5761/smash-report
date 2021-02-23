@@ -22,6 +22,7 @@ import { AnalysComponent } from './page/analys/analys.component';
 import { CounterplanComponent } from './page/counterplan/counterplan.component';
 import { EditComponent } from './page/edit/edit.component';
 import { ForgetPasswordComponent } from './page/forget-password/forget-password.component';
+import { HomeComponent } from './page/home/home.component';
 import { ListComponent } from './page/list/list.component';
 import { SignInComponent } from './page/sign-in/sign-in.component';
 import { SignUpComponent } from './page/sign-up/sign-up.component';
@@ -69,7 +70,8 @@ import { MessageService } from 'primeng/api';
     SelectStageComponent,
     SignUpComponent,
     AnalysComponent,
-    CounterplanComponent
+    CounterplanComponent,
+    HomeComponent
 ],
   imports: [
         BrowserModule.withServerTransition({ appId: 'serverApp' })

@@ -1,0 +1,22 @@
+.content {
+    div.today {
+        text-align : center;
+        font-size : 24px;
+        .no-result .result {
+            text-align : center;
+        }
+        .result {    
+            .win {
+                color : red;
+                padding : 10px;
+            }
+            .lose {
+                color : blue;
+                padding : 10px;
+            }
+            .rate {
+                padding : 10px;    
+            }
+        }    
+    }
+}

@@ -12,6 +12,7 @@ const route : Routes = [
   , { 'path' : 'sign-in', 'component' : SignInComponent }
   , { 'path' : 'sign-up', 'component' : SignUpComponent }
   , { 'path' : 'forget-password', 'component' : ForgetPasswordComponent }
+  , { 'path' : 'home', 'loadChildren' : () => import( './page/home/home.module' ).then( m => m.HomeModule ), 'canActivate' : [ AngularFireAuthGuard ] }
   , { 'path' : 'list', 'loadChildren' : () => import( './page/list/list.module' ).then( m => m.ListModule ), 'canActivate' : [ AngularFireAuthGuard ] }
   , { 'path' : 'edit', 'loadChildren' : () => import( './page/edit/edit.module' ).then( m => m.EditModule ), 'canActivate' : [ AngularFireAuthGuard ] }
   , { 'path' : 'analys', 'loadChildren' : () => import( './page/analys/analys.module' ).then( m => m.AnalysModule ), 'canActivate' : [ AngularFireAuthGuard ] }

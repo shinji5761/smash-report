@@ -9,7 +9,7 @@ import { Users } from './users/users';
 import { UserModule } from './users/users.module';
 
 // Report API
-import { DetailReport, Report, SummaryReport } from './report/report';
+import { DetailReport, Report, ResultToDates, SummaryReport } from './report/report';
 import { ReportModule } from './report/report.module';
 import { CounterplanModule } from './counterplan/counterplan.module';
 import { Counterplan } from './counterplan/counterplan';
@@ -33,7 +33,7 @@ import { Counterplan } from './counterplan/counterplan';
       // username: 'smash_report',
       // password: 'Infinite33',
       // database: 'smash_report',
-      entities: [ Users, Report, SummaryReport, Counterplan, DetailReport ],
+      entities: [ Users, Report, SummaryReport, Counterplan, DetailReport, ResultToDates ],
       synchronize: true,
     }),
     UserModule,

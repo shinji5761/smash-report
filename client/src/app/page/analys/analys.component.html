@@ -1,33 +1,36 @@
 <!-- ヘッダー -->
 <app-header></app-header>
-
-<div class="select-char-box">
-    <app-select-char [initValue]="usedCharId" header="自分" (selectEvent)="onSelectUsedChar( $event )"></app-select-char>
-</div>
-
-<p-table
+<div class="content">
+    <div class="select-char-box">
+        <app-select-char [initValue]="usedCharId" header="自分" (selectEvent)="onSelectUsedChar( $event )"></app-select-char>
+    </div>
+    
+    <p-table
     selectionMode="single" 
-    scrollHeight="calc( 100vh - 280px - 50px  - 30px )"
+    scrollHeight="calc( 100vh - 68px - 100px - 56px - 90px )"
     [value]="reports"
     [scrollable]="true"
     [loading]="loading"
     (onRowSelect)="onClickReportBtn($event.data)" >
-    <ng-template pTemplate="header">
-        <tr>
-            <th *ngFor="let col of cols">{{ col.header }}</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-report >
-        <tr [pSelectableRow]="report">
-            <!-- 相手 -->
-            <td><img src="assets/img/char/{{ report.compCharId }}.png" alt=""></td>
-            <td>{{ cols[1].get( report ) }}</td>
-            <td>{{ cols[2].get( report ) }}</td>
-            <td>{{ cols[3].get( report ) }}</td>
-        </tr>
-    </ng-template>
-</p-table>
-
+        <ng-template pTemplate="header">
+            <tr>
+                <th *ngFor="let col of cols">{{ col.header }}</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-report >
+            <tr [pSelectableRow]="report">
+                <!-- 相手 -->
+                <td><img src="assets/img/char/{{ report.compCharId }}.png" alt=""></td>
+                <!-- 勝 -->
+                <td>{{ cols[1].get( report ) }}</td>
+                <!-- 負 -->
+                <td>{{ cols[2].get( report ) }}</td>
+                <!-- 勝率 -->
+                <td>{{ cols[3].get( report ) }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
 
 <p-dialog [(visible)]="detailDisp" *ngIf="chartData.length > 0" (onHide)="onHideDialog( )" [header]="'VS ' + CommonUtil.CHAR[selectedReport.compCharId].name">
     <div class="p-grid">
