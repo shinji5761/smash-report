@@ -1,6 +1,6 @@
 <!-- ヘッダー -->
 <app-header></app-header>
-
+<div class="content">
 <!-- テーブル -->
 <p-table
     selectionMode="single" 
@@ -32,6 +32,8 @@
 </p-table>
 
 
+
+</div>
 <!-- 編集モーダル -->
 <p-dialog [(visible)]="editDisp" *ngIf="editReport" (onHide)="onHideEditDialog()">
     <div class="p-grid">
@@ -62,5 +64,4 @@
         <button style="margin-top : 24px;" pButton class="p-button-danger" icon="pi pi-trash" iconPos="left" (click)="onClickDeleteBtn( )" label="削除"></button>    
     </p-footer>
 </p-dialog>
-
 <p-toast></p-toast>

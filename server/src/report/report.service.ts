@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, getManager } from 'typeorm';
-import { DetailReport, Report, SummaryReport } from './report';
-import { FindAllReport, FindDetailReport, FindSummaryReport } from './report-dto';
+import { Repository, getManager, Between } from 'typeorm';
+import { DetailReport, Report, SummaryReport, ResultToDates } from './report';
+import { FindAllReport, FindDetailReport, FindResultToDates, FindSummaryReport } from './report-dto';
 
 @Injectable()
 export class ReportService {
@@ -14,6 +14,14 @@ export class ReportService {
 
     async findById( id : number ) {
 
+    }
+
+    /** 日毎の戦績 */
+    async findResultToDates( param : FindResultToDates ) {
+        const entryManager = getManager();
+        let result = await entryManager.find( ResultToDates, { 'where' : { 'uId' : param.uId, 'date' : Between(param.from, param.to) }  , 'order' : { 'date' : 'ASC' } } );
+        // entryManager.find( ResultToDates, { 'where' : })
+        return result;
     }
 
     /** 検索 自分 */

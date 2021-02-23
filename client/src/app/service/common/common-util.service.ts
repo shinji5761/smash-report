@@ -90,6 +90,7 @@ export class CommonUtilService {
     , {'id' : '80', 'name' : 'ミェンミェン' }
     , {'id' : '81', 'name' : 'スティーブ' }
     , {'id' : '82', 'name' : 'セフィロス' }
+    , {'id' : '83', 'name' : 'ホムラ' }
   ];
 
   STAGE : any[] = [
@@ -128,6 +129,25 @@ export class CommonUtilService {
     return this.ENV[ id ].name;
   }
 
+  getNow( ) : Date {
+    return new Date( );
+  }
+
+
+  getFormatDateToString( target : Date , format : string = 'yyyy/MM/dd' ) : string {
+    format = format.replace(/yyyy/g, '' + target.getFullYear() );
+    format = format.replace(/MM/g, ('0' + (target.getMonth() + 1)).slice(-2));
+    format = format.replace(/dd/g, ('0' + target.getDate()).slice(-2));
+    format = format.replace(/hh/g, ('0' + target.getHours()).slice(-2));
+    format = format.replace(/mm/g, ('0' + target.getMinutes()).slice(-2));
+    format = format.replace(/ss/g, ('0' + target.getSeconds()).slice(-2));
+    if (format.match(/S/g)) {
+      var milliSeconds = ('00' + target.getMilliseconds()).slice(-3);
+      var length = format.match(/S/g).length;
+      for (var i = 0; i < length; i++) format = format.replace(/S/, milliSeconds.substring(i, i + 1));
+    }
+    return format;
+  }
 
 
   // Table //

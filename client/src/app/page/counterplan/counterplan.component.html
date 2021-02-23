@@ -1,15 +1,17 @@
 <!-- ヘッダー -->
 <app-header></app-header>
 
-<div class="select-char-box">
-    <app-select-char [initValue]="plan.charId" header="対策キャラ" (selectEvent)="onSelectChar( $event )"></app-select-char>
+<div class="content">
+    <div class="select-char-box">
+        <app-select-char [initValue]="plan.charId" header="対策キャラ" (selectEvent)="onSelectChar( $event )"></app-select-char>
+    </div>
+    
+    
+    <div style="margin : 0 10px;">
+        <p-editor [(ngModel)]="plan.text" [style]="{'height' : 'calc(100vh - 260px - 50px - 30px)'}"></p-editor>
+    </div>
+    
+    <button pButton class="save-btn" icon="pi pi-save" label="保存" (click)="onClickSaveBtn()"></button>
+    
+    <p-toast position="top-left"></p-toast>
 </div>
-
-
-<div style="margin : 0 10px;">
-    <p-editor [(ngModel)]="plan.text" [style]="{'height' : 'calc(100vh - 260px - 50px - 30px)'}"></p-editor>
-</div>
-
-<button pButton class="save-btn" icon="pi pi-save" label="保存" (click)="onClickSaveBtn()"></button>
-
-<p-toast position="top-left"></p-toast>

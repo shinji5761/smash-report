@@ -22,7 +22,7 @@ export class SignInComponent implements OnInit {
   ngOnInit() {
     this.authSvc.getUser().then(
       () => {
-        this.router.navigate( [ 'list' ] );
+        this.router.navigate( [ 'home' ] );
       }
     )
   }
@@ -31,7 +31,7 @@ export class SignInComponent implements OnInit {
   onClickSignInBtn( email : string, password : string ) {
     this.authSvc.emailSignIn( email, password )
     .then( () => {
-      this.router.navigate( [ 'list' ] );
+      this.router.navigate( [ 'home' ] );
     })
     .catch( e => {
       console.error( e )
@@ -41,7 +41,7 @@ export class SignInComponent implements OnInit {
   onClickSigninTwitterBtn() : void {
     this.authSvc.twitterSignIn()
     .then( () => {
-      this.router.navigate( [ 'list' ] );
+      this.router.navigate( [ 'home' ] );
     })
     .catch( e => {
       console.error( e )
@@ -51,7 +51,7 @@ export class SignInComponent implements OnInit {
   onClickSigninGoogleBtn() : void {
     this.authSvc.googleSignIn()
     .then( () => {
-      this.router.navigate( [ 'list' ] );
+      this.router.navigate( [ 'home' ] );
     })
     .catch( e => {
       console.error( e )

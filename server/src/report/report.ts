@@ -129,3 +129,67 @@ export class DetailReport {
     @ViewColumn({ 'name' : 'rate' })
     rate : number;
 }
+
+
+@ViewEntity({
+    'expression' : `
+    SELECT 
+	  a.u_id AS u_id
+    , a.date AS date
+    , a.win AS win
+    , a.lose AS lose
+    , round( (a.win::NUMERIC / ( a.win::NUMERIC + a.lose::NUMERIC )  * 100.0)::NUMERIC, 2) AS rate
+    FROM 
+    (
+        SELECT
+        r.u_id
+        , w.date
+        , CASE WHEN w.win IS NOT NULL then w.win ELSE 0 END AS win
+        , CASE WHEN l.lose IS NOT NULL then l.lose ELSE 0 END AS lose
+        FROM 
+        (
+            SELECT DISTINCT u_id FROM report
+        )r
+        LEFT JOIN
+        (
+            -- 勝
+            SELECT
+            u_id
+            , TO_CHAR( created_at, 'YYYY/MM/DD') AS date
+            , COUNT( result ) AS win
+            FROM report
+            WHERE result = '0'
+            GROUP BY u_id, date
+        ) w
+        ON ( r.u_id = w.u_id )
+        LEFT JOIN
+        (
+            -- 負
+            SELECT
+            u_id
+            , TO_CHAR( created_at, 'YYYY/MM/DD') AS date
+            , COUNT( result ) AS lose
+            FROM report
+            WHERE result = '1'
+            GROUP BY u_id, date
+        ) l
+        ON ( r.u_id = l.u_id AND w.date = l.date )
+    ) a`
+})
+export class ResultToDates {
+    @ViewColumn({ 'name' : 'u_id' })
+    uId : string;
+
+    @ViewColumn({ 'name' : 'date' })
+    date : string;
+
+    @ViewColumn({'name' : 'win' })
+    win : number;
+    
+    @ViewColumn({'name' : 'lose' })
+    lose : number;
+    
+    @ViewColumn({'name' : 'rate' })
+    rate : number;
+    
+}

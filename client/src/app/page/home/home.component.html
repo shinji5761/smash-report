@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class="content">
+    <h2>今日の戦績</h2>
+    <div class="today">
+        <p *ngIf="!todayData" class="non-result">今日の対戦記録がありません</p>
+        <p *ngIf="todayData" class="result">
+        <span class="win" >{{ todayData.win }}勝</span>／
+        <span class="lose">{{ todayData.lose }}負</span>
+        <span class="rate">{{ todayData.rate }}%</span>
+
+    </div>
+        
+    <h2>週間の戦績</h2>
+
+    <div class="week">
+        <p-chart *ngIf="chartData" type="bar" [data]="chartData.data" [options]="chartData.options"></p-chart>
+    </div>
+
+</div>

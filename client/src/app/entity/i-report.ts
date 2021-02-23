@@ -39,6 +39,14 @@ export interface IReportDetail {
     rate       : number;
 }
 
+export interface IReportToDates {
+    uId  : string;
+    date : string;
+    win  : number;
+    lose : number;
+    rate : number;
+}
+
 export interface IReportAnarysOption {
     uId        : string;
     usedCharId : string;
@@ -48,4 +56,11 @@ export interface IReportDetailOption {
     uId        : string;
     usedCharId : string;
     compCharId : string;
+}
+
+
+export interface IReportToDatesOption {
+    uId  : string;
+    from : string;
+    to   : string;
 }
